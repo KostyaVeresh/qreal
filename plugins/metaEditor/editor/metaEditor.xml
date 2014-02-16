@@ -177,6 +177,7 @@
 					<properties>
 						<property type="string" name="displayedName"/>
 						<property type="string" name="shape"/>
+                                                <property type="string" name="gesture"/>
 						<property type="string" name="description"/>
 						<property type="bool" name="isAction">
 							<default>false</default>

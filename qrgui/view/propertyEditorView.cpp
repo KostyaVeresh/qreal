@@ -100,7 +100,7 @@ void PropertyEditorView::setRootIndex(const QModelIndex &index)
 		} else if (!values.isEmpty()) {
 			type = QtVariantPropertyManager::enumTypeId();
 		} else {
-			if (name == "shape" || mModel->isReference(valueCell, name)) { // hack
+			if (name == "shape" || name == "gesture" || mModel->isReference(valueCell, name)) { // hack
 				isButton = true;
 			}
 		}
@@ -161,6 +161,8 @@ void PropertyEditorView::buttonClicked(QtProperty *property)
 	// there are only four types of buttons: shape, reference, text and directory path
 	if (name == "shape") {
 		mMainWindow->openShapeEditor(actualIndex, role, propertyValue, false);
+	} else if (name == "gesture") {
+		mMainWindow->openGestEditor(actualIndex, role, propertyValue, false);
 	} else {
 		QString const typeName = mModel->typeName(index).toLower();
 		if (typeName == "code") {

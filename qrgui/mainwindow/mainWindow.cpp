@@ -35,6 +35,7 @@
 
 #include "mainwindow/errorReporter.h"
 #include "mainwindow/shapeEdit/shapeEdit.h"
+#include "mainwindow/gestEdit/gestEdit.h"
 #include "mainwindow/propertyEditorProxyModel.h"
 #include "mainwindow/startWidget/startWidget.h"
 #include "mainwindow/referenceList.h"
@@ -1078,6 +1079,24 @@ void MainWindow::openShapeEditor(
 	mUi->tabs->addTab(shapeEdit, tr("Shape Editor"));
 	mUi->tabs->setCurrentWidget(shapeEdit);
 	setConnectActionZoomTo(shapeEdit);
+}
+
+void MainWindow::openGestEdit(
+		QPersistentModelIndex const &index
+		, int role
+		, QString const &propertyValue
+		, bool useTypedPorts
+		)
+{
+	GestEdit *gestEdit = new GestEdit(dynamic_cast<models::details::LogicalModel *>(mModels->logicalModel())
+			, index, role, useTypedPorts);
+	if (!propertyValue.isEmpty()) {
+		gestEdit->load(propertyValue);
+	}
+
+	mUi->tabs->addTab(gestEdit, tr("Gesture Editor"));
+	mUi->tabs->setCurrentWidget(gestEdit);
+	setConnectActionZoomTo(gestEdit);
 }
 
 // This method is for Interpreter.
