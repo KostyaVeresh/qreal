@@ -31,6 +31,15 @@ HEADERS += \
 	$$PWD/startWidget/listWidget.h \
 	$$PWD/startWidget/circleWidget.h \
 	$$PWD/startWidget/styledButton.h \
+    mainwindow/gestEdit/gestXmlLoader.h \
+    mainwindow/gestEdit/gestScene.h \
+    mainwindow/gestEdit/gestRectangle.h \
+    mainwindow/gestEdit/gestParser.h \
+    mainwindow/gestEdit/gestLine.h \
+    mainwindow/gestEdit/gestItem.h \
+    mainwindow/gestEdit/gestEllipse.h \
+    mainwindow/gestEdit/gestEdit.h \
+    mainwindow/gestEdit/gestCurve.h
 
 SOURCES += \
 	$$PWD/mainWindow.cpp \
@@ -60,6 +69,15 @@ SOURCES += \
 	$$PWD/startWidget/listWidget.cpp \
 	$$PWD/startWidget/circleWidget.cpp \
 	$$PWD/startWidget/styledButton.cpp \
+    mainwindow/gestEdit/gestXmlLoader.cpp \
+    mainwindow/gestEdit/gestScene.cpp \
+    mainwindow/gestEdit/gestRectangle.cpp \
+    mainwindow/gestEdit/gestParser.cpp \
+    mainwindow/gestEdit/gestLine.cpp \
+    mainwindow/gestEdit/gestItem.cpp \
+    mainwindow/gestEdit/gestEllipse.cpp \
+    mainwindow/gestEdit/gestEdit.cpp \
+    mainwindow/gestEdit/gestCurve.cpp
 
 win32 {
 	HEADERS += \
@@ -88,6 +106,7 @@ macx {
 FORMS += \
 	$$PWD/mainWindow.ui \
 	$$PWD/referenceList.ui \
+    mainwindow/gestEdit/gestEdit.ui
 
 # Shape editor
 HEADERS += \

@@ -162,7 +162,7 @@ void PropertyEditorView::buttonClicked(QtProperty *property)
 	if (name == "shape") {
 		mMainWindow->openShapeEditor(actualIndex, role, propertyValue, false);
 	} else if (name == "gesture") {
-		mMainWindow->openGestEditor(actualIndex, role, propertyValue, false);
+		mMainWindow->openGestEdit(actualIndex, role, propertyValue, false);
 	} else {
 		QString const typeName = mModel->typeName(index).toLower();
 		if (typeName == "code") {
